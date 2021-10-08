@@ -1,0 +1,33 @@
+.menupanel .into{
+  width: 100%;
+  margin: 0 auto;
+  height: auto;
+  margin-top: 20px;
+  display: flex;
+ /*  justify-content: center; */
+  align-items: flex-start;
+  flex-direction: column;
+  /* color: #109bad; */
+  font-size: 14px;
+ color: #0f018a;
+  /* background-color: red; */
+}
+.menupanel .into span{
+  margin-left: 20px;
+  width: auto;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+ 
+}
+.menupanel .into .sp2{
+  color:#109bad;
+}
+.menupanel .into .sp3{
+  color:#4f9b11;
+}
+.menupanel .into span:hover{
+  border-radius: 10px;
+  color: #d21947;
+  background-color: rgba(255, 255, 255, 0.411);
+}

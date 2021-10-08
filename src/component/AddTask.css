@@ -1,0 +1,51 @@
+:root {
+    /* --cal-back:rgb(235, 53, 53); */
+    --cal-back-adtask: rgb(238, 238, 238);
+    --cal-border: #1976d2;
+  }
+.addtaskparent{
+    width: 100%;
+    height:auto;
+    margin-top: 20px;
+}
+.addtaskparent .main{
+    width: 100% ;
+    height: 200px;
+    border: 1px solid var(--cal-border);
+    background-color: var(--cal-back-adtask);
+    padding: 5px;
+    border-radius: 4px;
+}
+.addtaskparent .main input,.addtaskparent .main textarea{
+    border: none;
+    outline: 0;
+    width: 100%;
+    height:30px;
+    font-size:16px;
+    color:var(--cal-border);
+    background-color: var(--cal-back-adtask);
+}
+.addtaskparent .main textarea{
+    font-size: 12px;
+    margin-top: 20px;
+    height:60px;
+}
+.addnewtaskbar{
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    width: 100%;
+    cursor: pointer;
+    font-size: 16px;
+}
+.span1{
+    width: 24px;
+    height: 24px;
+}
+.addnewtaskbar:hover .span1{
+    background-color: white;
+    border-radius: 5px;
+}
+.successmessage{
+    color:rgba(206, 248, 172, 0.726);
+}

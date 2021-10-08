@@ -1,43 +1,4 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
- *,
+*,
 *::after,
 *::before {
   -webkit-box-sizing: border-box;
@@ -54,18 +15,16 @@ p ,*{
   flex-direction:initial; */
 }
 :root{
-    /* --cal-back:rgb(235, 53, 53); */
-    --cal-back:#1976d2;
+    --cal-back:rgb(235, 53, 53);
     --cal-icons:whitesmoke;
     --cal-hover:aliceblue;
     --cal-menuback:rgba(124, 238, 213, 0.534);
     --cal-mainback:rgba(161, 161, 161, 0.151);
     --cal-backpanels:rgba(255, 72, 0, 0.582);
-    --cal-menupanel:rgba(248, 248, 248, 0.22);
 }
 body {
   margin: 0 auto;
-  font-family: sans-serif;
+  font-family: Tahoma, sans-serif;
   font-size: 14px;
   background-color: var(--cal-mainback);
 }
@@ -133,7 +92,7 @@ svg{
   color:var(--cal-hover);
 }
 .searchinput:hover::placeholder{
-  color: rgb(148, 251, 255);
+  color: black;
 }
 .searchinput:focus::placeholder{
   color: black;
@@ -165,7 +124,7 @@ svg{
   opacity: 1;
   height: auto;
   padding-top: 10px;
-  background-color: var(--cal-menupanel);
+  background-color:rgba(233, 173, 105, 0.226)
 }
 .mainpanel{
   transition: 1s;
@@ -178,7 +137,7 @@ svg{
   transition:1s;
   margin-left: 0;
   width: 100%;
-  /* height: auto; */
+  height: auto;
   /* display: inline-flex; */
 }
 /* .mainpanelcheck{
@@ -328,7 +287,7 @@ svg{
   border: 2px solid red; 
 }
 .menuitemdefaultback{
-  background-color: var(--cal-backpanels);
+  background-color: var(--cal-backpanels)
 }
 .menuitems:hover{
   background-color: azure;
@@ -337,27 +296,26 @@ svg{
   .menupanel{
     transition: 1s;
     /* width:0%; */
-    width:15%;
-    margin-left: -15%;
-    height: calc(100vh - 40px);
-    
-    background-color: var(--cal-menupanel);
-    /* background-color:rgba(233, 173, 105, 0.226) */
+    width:20%;
+    margin-left: -20%;
+    height: auto;
+    background-color:rgba(233, 173, 105, 0.226)
   }
   .showmenu{
     transition: 1s;
     margin-left:0;
-    width:15%;
-    
+    width:20%;
+    height: auto;
   }
   .firststatepanel{
     transition: 1s;
     margin-left:0;
-    width:15%;
+    width:20%;
+    height: auto;
   }
   .mainpanel{
     transition: 1s;
-    width: 85%;
+    width: 80%;
     background-color:var(--cal-mainback);
   }
   .mainpanelcheck{
