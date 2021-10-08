@@ -4,7 +4,13 @@ import './AddTask.css'
 import Button from '@mui/material/Button';
 import AddBoxIcon from '@mui/icons-material/AddBox';
 import AlertDialog from '../mui/AlertDialog'
+import { useContext } from 'react';
+import { mycontext } from './MainPanel';
+
+
+
 export default function AddTask(props) {
+    const tasks=useContext(mycontext);
     const [canadd,setcanadd]=useState({canadd:false,value:"",des:"",successmessage:""});
     const [showpanel,ssetshowpanel]=useState(true);
    /*  const [Tasksuccessmessage,settasksuccessmessage]=useState(""); */
@@ -18,10 +24,12 @@ export default function AddTask(props) {
         setcanadd({...canadd,des:e.target.value,successmessage:""});
     }
     let savetask=()=>{
-        props.addnewtask({category:-1,done:false,title:canadd.value,description:canadd.des});
+        props.addnewtask({category:-1,done:false,title:canadd.value,description:canadd.des}); 
         setcanadd({canadd:false,value:"",des:"",successmessage:"Add Task: "+canadd.value+" successfully! "})
     }
     let changeshowpanel=(v)=>{
+            if(!v)
+            setcanadd({...canadd,canadd:false,value:"",des:"",successmessage:""})
             ssetshowpanel(v);
     }
     return (

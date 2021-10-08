@@ -1,0 +1,16 @@
+.grouptask{
+    display: flex;
+    align-items: center;
+}
+.grouptaskcontainer{
+    margin-top: 5px;
+    height: 100px;
+    margin-bottom: 5px;
+    overflow-x: auto; 
+    padding:10px;
+    width: 100% ;
+    border: 1px solid var(--cal-border);
+    background-color: var(--cal-back-adtask);
+    padding: 5px;
+    border-radius: 4px;
+}
