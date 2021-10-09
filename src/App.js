@@ -24,9 +24,8 @@ function App() {
     <title>TODO-APP</title>
     </MetaTags>
       {/* <div className="App"> */}
-      
-      <Header menu={menustate} toggle_menu={toggle_menu}></Header>
       <wichpanelcontext.Provider value={{v1:wichpanel,v2:setwichpanel}}>
+      <Header menu={menustate} toggle_menu={toggle_menu}></Header>
       <section className="section-below container">
         <SideMenu menu={menustate}></SideMenu>
         <MainPanel menu={menustate}></MainPanel>

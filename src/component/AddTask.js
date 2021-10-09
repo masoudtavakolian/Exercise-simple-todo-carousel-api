@@ -3,6 +3,7 @@ import { useState } from 'react'
 import './AddTask.css'
 import Button from '@mui/material/Button';
 import AddBoxIcon from '@mui/icons-material/AddBox';
+import AddTwoToneIcon from '@mui/icons-material/AddTwoTone';
 import AlertDialog from '../mui/AlertDialog'
 import { useContext } from 'react';
 import { mycontext } from './MainPanel';
@@ -37,9 +38,9 @@ export default function AddTask(props) {
     
         {(!showpanel)?<div className="addnewtaskbar" onClick={()=>changeshowpanel(true)}>
             <span className="span1">
-                <AddBoxIcon variant="contained" color="primary"></AddBoxIcon>
+                <AddTwoToneIcon variant="contained" color="primary"></AddTwoToneIcon>
             </span>
-            <span>texticon</span>
+            <span>Add new task</span>
         </div>:null}
         {(showpanel)?<div className="addtaskparent">
 
@@ -51,11 +52,11 @@ export default function AddTask(props) {
             
             </div>
             {(canadd.successmessage.length!=0)?<div className="successmessage">{canadd.successmessage}</div>:null}
-            <Button disabled={(!canadd.canadd)?"disabled":null} variant="contained" color="primary" onClick={()=>savetask()}>
+            <Button disabled={(!canadd.canadd)?"disabled":null} variant="contained" color="error" onClick={()=>savetask()}>
                 {/* {canadd.value} */}
                 Add Task!
             </Button>
-            <Button style={{marginLeft:"5px"}} disabled={null} variant="outlined" color="error" onClick={()=>changeshowpanel(false)}>
+            <Button style={{marginLeft:"5px"}} disabled={null} variant="outlined" onClick={()=>changeshowpanel(false)}>
                 
                 cancel
             </Button>

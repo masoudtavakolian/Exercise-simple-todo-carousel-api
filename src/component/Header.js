@@ -5,9 +5,23 @@ import ListIcon from '@mui/icons-material/List';
 import CloseIcon from '@mui/icons-material/Close';
 import HomeIcon from '@mui/icons-material/Home';
 import ManageSearchIcon from '@mui/icons-material/ManageSearch';
-
+import {useState,useContext} from 'react'
 export default function Header(props) {
-  
+    const [searchval,setsearchval] = useState("")
+   // const {v1:wichpanel,v2:setwichpanel}=useContext(wichpanelcontext);
+
+    let searchitem=(e)=>{
+      if(e.keyCode===13){
+        e.preventDefault();
+        if(e.target.value==""){
+          e.target.placeholder="Enter Value To search!";
+         }
+         else{
+          e.target.placeholder="Search...";
+          //setwichpanel("search");
+        }
+      }
+    }
     return (
         <section className="head">
       <div className="container">
@@ -51,7 +65,7 @@ export default function Header(props) {
             </svg> */}
             <ManageSearchIcon></ManageSearchIcon>
           </div>
-          <input type="text" className="searchinput" placeholder="Search..." />
+          <input onKeyUp={(e)=>searchitem(e)} type="text" className="searchinput" placeholder="Search..." />
         </div>
         
       </div>

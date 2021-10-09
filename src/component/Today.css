@@ -1,16 +1,17 @@
 :root {
   /* --cal-back:rgb(235, 53, 53); */
-  --cal-back: #1976d2;
+  /* --cal-back: #1976d2; */
 }
 .todaycontainer {
-  background-color: rgba(102, 51, 153, 0.247);
-  width: 80%;
+  /* background-color: rgba(102, 51, 153, 0.247); */
+  width:70%;
   height: 500px;
   margin: 0 auto;
   padding: 20px;
 }
 .todaycontainer > span {
-  font-weight: 800;
-  font-size: 25px;
-  color: var(--cal-back);
+  font-weight: 700;
+  font-size: 21px;
+  /* color: var(--cal-back); */
+  color: rgba(0, 0, 0, 0.76);
 }

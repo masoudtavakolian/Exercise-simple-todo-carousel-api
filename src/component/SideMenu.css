@@ -12,13 +12,13 @@
  color: #0f018a;
   /* background-color: red; */
 }
-.menupanel .into span{
-  margin-left: 20px;
-  width: auto;
-  padding: 10px;
+.menupanel .into >span{
+  margin-left: 35px;
+  width: calc(100% - 35px);
+  padding: 8px;
   display: flex;
-  align-items: center;
- 
+  /* align-items: center; */
+  justify-content: flex-start;
 }
 .menupanel .into .sp2{
   color:#109bad;
@@ -26,8 +26,11 @@
 .menupanel .into .sp3{
   color:#4f9b11;
 }
-.menupanel .into span:hover{
-  border-radius: 10px;
+.menupanel .into span:hover svg{
   color: #d21947;
-  background-color: rgba(255, 255, 255, 0.411);
+}
+.menupanel .into span:hover{
+  border-radius: 4px;
+  color: #d21947;
+  background-color:#eee;
 }

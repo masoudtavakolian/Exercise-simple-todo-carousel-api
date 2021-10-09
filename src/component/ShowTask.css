@@ -2,6 +2,9 @@
     display: flex;
     align-items: center;
 }
+.grouptask svg{
+    color:var(--cal-back);
+}
 .grouptaskcontainer{
     margin-top: 5px;
     height: 100px;
@@ -9,8 +12,11 @@
     overflow-x: auto; 
     padding:10px;
     width: 100% ;
-    border: 1px solid var(--cal-border);
-    background-color: var(--cal-back-adtask);
+    border: 1px solid rgba(82, 81, 81, 0.582);
+    background-color: var(--cal-mainback);
     padding: 5px;
     border-radius: 4px;
+}
+.numberlist{
+    color:var(--cal-back);
 }

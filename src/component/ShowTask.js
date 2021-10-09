@@ -8,10 +8,12 @@ const settask=useContext(mycontextsettask);
 const alltask=useContext(mycontext);
 
 let setcheck=(items)=>{
+
     setTimeout(() => {
         alltask[items].done=true;
         settask([...alltask]);
     }, 500)
+    
 }
 let myex=[]
 let leng=0
@@ -21,10 +23,10 @@ myex=alltask.map((item,index)=>{
 if(item.category===-1 && item.done===props.status){
 leng++
 return <div className="grouptask">
-<Checkbox
+<Checkbox   
 checked={(item.done)?item.done:null}
 onChange={()=>{setcheck(index)}}
-/><div key={index} onClick={()=>{}}>{leng+" - "+item.title}</div></div>
+/><div key={index} onClick={()=>{alert(item.title)}}><span className="numberlist">{leng+" - "}</span>{item.title}</div></div>
 }
 else
 return null; 
