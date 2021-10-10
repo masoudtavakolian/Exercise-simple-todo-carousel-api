@@ -2,7 +2,7 @@ import React,{useContext} from "react";
 import AddTask from "./AddTask";
 import "./Today.css";
 import AlertDialog from "../mui/AlertDialog";
-import { mycontext } from "./MainPanel";
+import { mycontext } from "../App";
 import ShowTask from "./ShowTask";
 export default function Completed(props) {
     const tasks=useContext(mycontext);
