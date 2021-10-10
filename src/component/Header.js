@@ -22,6 +22,7 @@ export default function Header(props) {
         elm.placeholder="Search...";
         setwichpanel("search");
         setsearchitem(elm.value); 
+        elm.value="";
       }
     }
 
@@ -35,6 +36,7 @@ export default function Header(props) {
           e.target.placeholder="Search...";
           setwichpanel("search");
           setsearchitem(e.target.value);
+          e.target.value="";
         }
       }
     }

@@ -13,7 +13,7 @@ import { mycontext } from '../App';
 export default function AddTask(props) {
     const tasks=useContext(mycontext);
     const [canadd,setcanadd]=useState({canadd:false,value:"",des:"",successmessage:""});
-    const [showpanel,ssetshowpanel]=useState(true);
+    const [showpanel,ssetshowpanel]=useState(false);
    /*  const [Tasksuccessmessage,settasksuccessmessage]=useState(""); */
     let onkeyupsavedata=(e)=>{
         if(e.keyCode===13){
