@@ -4,20 +4,16 @@
   height: auto;
   margin-top: 20px;
   display: flex;
- /*  justify-content: center; */
   align-items: flex-start;
   flex-direction: column;
-  /* color: #109bad; */
   font-size: 14px;
  color: #0f018a;
-  /* background-color: red; */
 }
 .menupanel .into >span{
   margin-left: 35px;
   width: calc(100% - 35px);
   padding: 8px;
   display: flex;
-  /* align-items: center; */
   justify-content: flex-start;
 }
 .menupanel .into .sp2{

@@ -1,87 +1,90 @@
-import React,{useContext,useState} from 'react'
+import React,{useContext} from 'react'
 import Checkbox from '@mui/material/Checkbox';
-import blue from '@mui/material/colors/blue'
 import ReactHtmlParser from 'react-html-parser';
 import './ShowTask.css'
-import { mycontextsettask,mycontext } from '../App';
+import { myContextSetTask,myContext } from '../App';
 export default function ShowTask(props) {
-const settask=useContext(mycontextsettask);
-const alltask=useContext(mycontext);
 
-let setcheck=(items)=>{
+const setTaskFunc=useContext(myContextSetTask);
+const finalStringTaskList=useContext(myContext);
 
+let setCheckBox=(items)=>{
     setTimeout(() => {
-        alltask[items].done=true;
-        settask([...alltask]);
-        
+        finalStringTaskList[items].done=true;
+        setTaskFunc([...finalStringTaskList]);
     }, 500)    
-    
 }
-function colorsearchresult(find,value){
+
+function colorShowSearchResult(find,toFind){
   
-    let all="";
-    let lastindex;
-    //while(value.length>=find.length){
-    lastindex=value.search(find);
-    while(lastindex!=-1){
-    all=all+`${value.slice(0,lastindex).replace(" ","&nbsp;")}<span style='text-align:left;color:orange'>${value.slice(lastindex,lastindex+find.length).replace(" ","&nbsp;")}</span>`;
-    // if(lastindex+find.length-1)
-    if((lastindex+find.length)==value.length){
-    value="";lastindex=-1;
+    let finalString="";
+    let lastIndex;
+    lastIndex = toFind.search(find);
+    while(lastIndex !== -1){
+    finalString=finalString+`${toFind.slice(0,lastIndex).replace(" ","&nbsp;")}<span style='text-align:left;color:orange'>${toFind.slice(lastIndex,lastIndex+find.length).replace(" ","&nbsp;")}</span>`;
+    if((lastIndex+find.length) === toFind.length){
+        toFind="";
+        lastIndex=-1;
     }
     else{
-    value=value.slice(lastindex+find.length,value.length);
-    lastindex=value.search(find);
+        toFind=toFind.slice(lastIndex+find.length,toFind.length);
+        lastIndex=toFind.search(find);
     }
 }
-    all+=value;
-    
-    // firstindex=lastindex+find.length;
-    // value=value.substr(firstindex,v.length-1);
-    /* value=value.substr(find.length,value.length-1);
-    lastindex=value.search(find); */
-  // }
-  //console.log(all)
-  return all
+    finalString+=toFind;
+  return finalString
   }
 
-let myex=[]
-let leng=0
-if(props.search!==undefined && props.search!==""){
-    myex=alltask.map((item,index)=>{
-        if(item.title.search(props.search)!=-1)
+let finalJsxList=[];
+let countItems=0;
+let messageBelowSearch="";
+let messageBelowSearchOther="";
+
+if(props.search !== undefined && props.search !== ""){
+    finalJsxList=finalStringTaskList.map((item,index)=>{
+        if(item.title.search(props.search)!==-1)
         {
-        leng++
-        return <div className="grouptask">
-        <Checkbox   
-        checked={(item.done)?item.done:null}
-        onChange={()=>{setcheck(index)}}
-        /><div key={index} onClick={()=>{alert("FindIn:\n"+item.title)}}><span className="numberlist">{leng+" - "}</span>
-        {ReactHtmlParser(colorsearchresult(props.search,item.title))}</div></div>
+         countItems++
+         return <div key={index+"firstdiv"} className="grouptask">
+         <Checkbox   
+         key={index+"checkbox"}
+         checked={(item.done)?item.done:null}
+         onChange={()=>{setCheckBox(index)}}
+         /><div key={index} onClick={()=>{alert("Item:\n"+item.title)}}><span key={index+"span"} className="numberlist">{countItems+" - "}</span>
+         {ReactHtmlParser(colorShowSearchResult(props.search,item.title))}</div></div>
         }
         else
-        return null; 
+         return null; 
         });
+        if(countItems===0)
+        messageBelowSearch="Not Find!";
 }
-
-//show today task
-else if(props.showcategory===-1){
-myex=alltask.map((item,index)=>{
+else if(props.showCategory===-1 || props.showCategory===-2){
+finalJsxList=finalStringTaskList.map((item,index)=>{
 if(item.category===-1 && item.done===props.status){
-leng++
-return <div className="grouptask">
-<Checkbox   
-checked={(item.done)?item.done:null}
-onChange={()=>{setcheck(index);}}
-/><div key={index} onClick={()=>{alert(item.title)}}><span className="numberlist">{leng+" - "}</span>{item.title}</div></div>
+    countItems++;
+    return(<div key={index+"firstdiv"} className="grouptask">
+            <Checkbox  
+            key={index+"checkbox"} 
+            checked={(item.done)?item.done:null}
+            onChange={()=>{setCheckBox(index);}}
+            /><div key={index} onClick={()=>{alert(item.title)}}><span key={index+"span"} className="numberlist">{countItems+" - "}</span>{item.title}</div></div>)
 }
 else
-return null; 
+    return null; 
 });
+if(countItems===0 && props.showCategory===-1)
+    messageBelowSearchOther ="";
+else if(countItems===0 && props.showCategory===-2)
+    messageBelowSearchOther = "No Task Complited yet!";
 }
+
     return (
         <>
-          {(leng>0)?<div className="grouptaskcontainer">{myex}</div>:null}  
+          {(countItems>0)?<div className="grouptaskcontainer">{finalJsxList}</div>:null}  
+          {(messageBelowSearch!=="")?<div className="grouptaskcontainer">{messageBelowSearch}</div>:null}
+          {(messageBelowSearchOther!=="")?<div className="grouptaskcontainer">{messageBelowSearchOther}</div>:null}
+          
         </>
     )
 }

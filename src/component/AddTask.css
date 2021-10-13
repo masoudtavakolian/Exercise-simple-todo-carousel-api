@@ -1,10 +1,9 @@
 :root {
-    /* --cal-back:rgb(235, 53, 53); */
     --cal-back-adtask: rgb(238, 238, 238);
     --cal-border: #1976d2;
     --cal-mainback:#fff;
     --cal-back:#db4c3f;
-  }
+}
 .addtaskparent{
     width: 100%;
     height:auto;
@@ -26,12 +25,12 @@
     height:30px;
     font-size:16px;
     color:var(--cal-border);
-    /* background-color: var(--cal-back-adtask); */
 }
 .addtaskparent .main textarea{
     font-size: 12px;
     margin-top: 20px;
-    height:60px;
+    height:calc(100% - 50px);
+    resize: none;
 }
 .addnewtaskbar{
     display: flex;

@@ -1,29 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
-
 import { useState, createContext } from 'react';
 import MetaTags from 'react-meta-tags';
-import {Button,Alert} from  '@mui/material';
-import * as Mui from '@material-ui/core';
 import Header from './component/Header';
 import SideMenu from './component/SideMenu';
 import MainPanel from './component/MainPanel';
-export const wichpanelcontext = createContext();
-export const mycontext = createContext();
-export const mycontextsettask = createContext();
-export const contextsearchitem = createContext();
-function App() {
-  const [tasks,settasks]=useState([])
-  const [menustate,setmenustate] = useState(true);
-  const [wichpanel,setwichpanel]=useState("today");
-  const [searchitem,setsearchitem]=useState("");
 
-  const toggle_menu = (toggle_state) => {
-    setmenustate(toggle_state);
+export const wichPanelContext = createContext();
+export const myContext = createContext();
+export const myContextSetTask = createContext();
+export const contextSearchItem = createContext();
+
+function App() {
+  const [tasks,setTaskFuncs]=useState([])
+  const [menuState,setMenuState] = useState(true);
+  const [wichPanel,setWichPanel]=useState("today");
+  const [searchItem,setSearchItem]=useState("");
+
+  const toggleMenuFunc = (toggle_state) => {
+    setMenuState(toggle_state);
   };
 
-
-  /* const diiv={width:"auto",height:"10px"} */
   return (
     <>
     <MetaTags>
@@ -31,29 +27,19 @@ function App() {
     <meta name="description" content="MY TODO APP" />
     <title>TODO-APP</title>
     </MetaTags>
-      {/* <div className="App"> */}
-
-
-      <contextsearchitem.Provider value={{searchitem,setsearchitem}}>
-      <mycontextsettask.Provider value={settasks}>
-      <mycontext.Provider value={tasks} >
-      <wichpanelcontext.Provider value={{v1:wichpanel,v2:setwichpanel}}>
-      <Header menu={menustate} toggle_menu={toggle_menu}></Header>
+      <contextSearchItem.Provider value={{searchItem,setSearchItem}}>
+      <myContextSetTask.Provider value={setTaskFuncs}>
+      <myContext.Provider value={tasks} >
+      <wichPanelContext.Provider value={{v1:wichPanel,v2:setWichPanel}}>
+      <Header menu={menuState} toggleMenuFunc={toggleMenuFunc}></Header>
       <section className="section-below container">
-        <SideMenu menu={menustate}></SideMenu>
-        <MainPanel menu={menustate}></MainPanel>
+        <SideMenu menu={menuState}></SideMenu>
+        <MainPanel menu={menuState}></MainPanel>
       </section>
-      </wichpanelcontext.Provider>
-      </mycontext.Provider>
-      </mycontextsettask.Provider>
-      </contextsearchitem.Provider>
-
-
-      {/* <div style={diiv}><Alert severity="warning">This is a warning alert — check it out!</Alert></div>
-      <Mui.Typography>Test</Mui.Typography> 
-      <Button color="primary" variant="contained" onClick={()=>{}}>Free</Button> 
-      <switch /> */}
-      {/* </div> */}
+      </wichPanelContext.Provider>
+      </myContext.Provider>
+      </myContextSetTask.Provider>
+      </contextSearchItem.Provider>
     </>
   );
 }

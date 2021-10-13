@@ -9,9 +9,10 @@
   margin: 0 auto;
   padding: 20px;
 }
-.todaycontainer > span {
+.todaycontainer > span , .todaycontainer > div {
   font-weight: 700;
   font-size: 21px;
   /* color: var(--cal-back); */
   color: rgba(0, 0, 0, 0.76);
 }
+

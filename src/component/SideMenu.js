@@ -4,17 +4,17 @@ import DateRangeIcon from '@mui/icons-material/DateRange';
 import MoveToInboxIcon from '@mui/icons-material/MoveToInbox';
 import AssignmentTurnedInIcon from '@mui/icons-material/AssignmentTurnedIn';
 import './SideMenu.css'
-import { wichpanelcontext } from '../App';
+import { wichPanelContext } from '../App';
 export default function SideMenu(props) {
 
-  const {v1:wichpanel,v2:setwichpanel}=useContext(wichpanelcontext);
-  const [removefirststate,setremovefirststate]=useState(false);
+  const {v1:WichPanel,v2:setWichPanel}=useContext(wichPanelContext);
+  const [removeFirstState,setRemoveFirstStatePanel]=useState(false);
     
-    if(!props.menu && !removefirststate)
-      setremovefirststate(true);
+    if(!props.menu && !removeFirstState)
+      setRemoveFirstStatePanel(true);
     
     return (
-      <div className={"menupanel "+((!removefirststate)?"firststatepanel":"")+((props.menu)?" showmenu":"")}>
+      <div className={"menupanel "+((!removeFirstState)?"firststatepanel":"")+((props.menu)?" showmenu":"")}>
 
         <div className="into" >
           <span className="sp2"  >
@@ -22,12 +22,12 @@ export default function SideMenu(props) {
             <span>inbox</span>
           </span>
 
-          <span style={(wichpanel=="today")?{backgroundColor:"#eee"}:{backgroundColor:""}} onClick={()=>setwichpanel("today")}>
+          <span style={(WichPanel==="today")?{backgroundColor:"#eee"}:{backgroundColor:""}} onClick={()=>setWichPanel("today")}>
             <span><DateRangeIcon className="dt" sx={{marginRight:"10px",width:"20px",height:"20px",color:"#0f018a"}}></DateRangeIcon></span>
             <span>Today Tasks</span>
           </span>
           
-          <span style={(wichpanel=="completed")?{backgroundColor:"#eee"}:{backgroundColor:""}} className="sp3" onClick={()=>setwichpanel("completed")}>
+          <span style={(WichPanel==="completed")?{backgroundColor:"#eee"}:{backgroundColor:""}} className="sp3" onClick={()=>setWichPanel("completed")}>
           <span><AssignmentTurnedInIcon className="dt" sx={{marginRight:"10px",width:"20px",height:"20px",color:"#4f9b11 "}}></AssignmentTurnedInIcon></span>
             <span>Completed Tasks</span>
           </span>
@@ -36,7 +36,7 @@ export default function SideMenu(props) {
         {/* <div className="menuitems newtask">
           New Task
         </div>
-        <div className="menuitems showalltask">
+        <div className="menuitems showallTaskList">
           Show all Task
         </div>
         <div className="menuitems completedtask">

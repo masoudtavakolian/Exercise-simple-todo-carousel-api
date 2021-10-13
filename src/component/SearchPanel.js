@@ -1,18 +1,14 @@
 import React,{useContext} from "react";
-import AddTask from "./AddTask";
 import "./Today.css";
-import AlertDialog from "../mui/AlertDialog";
 import ShowTask from "./ShowTask";
-import {contextsearchitem} from "../App"
+import {contextSearchItem} from "../App"
 export default function SearchPanel(props) {
-
-  const {searchitem,setsearchitem}=useContext(contextsearchitem);
-  
+  const {searchItem}=useContext(contextSearchItem);
   return (
     <div className="todaycontainer">
-      <span>Search: {searchitem}</span>
+      <span>Search: {searchItem}</span>
       <span className="showtodaytask">
-          <ShowTask search={searchitem} showcategory={-2} status={true}></ShowTask>
+          <ShowTask search={searchItem} showCategory={100} status={true}></ShowTask>
       </span>
     </div>
   );

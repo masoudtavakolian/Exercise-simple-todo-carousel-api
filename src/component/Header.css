@@ -9,10 +9,6 @@ h2,
 h3,
 p ,*{
   margin: 0;
-  /* transition: 0.9s; */
-  /* direction: rtl;
-  justify-content: right;
-  flex-direction:initial; */
 }
 :root{
     --cal-back:rgb(235, 53, 53);
@@ -36,8 +32,8 @@ body {
     align-items: center;
 }
 svg{
-  width: 23px;
-  height: 23px;
+    width: 23px;
+    height: 23px;
     display: block;
     color:var(--cal-icons);
     margin: auto;   
@@ -69,7 +65,6 @@ svg{
   border-radius: 10px 0 0 10px;
 }
 .searchinput{
-  /* border-radius: 5px; */
   border-radius: 0 10px 10px 0;
   width: 30%;
   height: 30px;
@@ -78,7 +73,6 @@ svg{
   outline: 0;
   height: 100%;
   font-size: 14px;
- /*  margin-left: 1px; */
   transition:width 1s;
 }
 .searchinput:focus{
@@ -98,12 +92,10 @@ svg{
   color: black;
 }
 .container {
-  /* padding: 1px; */
   padding-left: 30px;
   width: 100%;
   margin: 0 auto;
   display: flex;
-  /* flex-wrap: wrap; */
 }
 .menu:hover,.home:hover,.closemenu:hover,.searchicon:hover{
     background-color: rgba(252, 252, 252, 0.2);
@@ -138,12 +130,7 @@ svg{
   margin-left: 0;
   width: 100%;
   height: auto;
-  /* display: inline-flex; */
 }
-/* .mainpanelcheck{
-  transition: 1s;
-  width: 100%;
-} */
 .mainpanelcontainer{
   width: 100%;
 }
@@ -152,7 +139,6 @@ svg{
   width:100%;
   background-color:var(--cal-backpanels);
   border-radius: 10px;
-  /* margin-top: 5px; */
   margin-bottom: 30px;
   border: 2px red solid;
 }
@@ -168,7 +154,6 @@ svg{
   padding: 10px;
 }
 .showitemcontainer{
-  /* direction: rtl; */
   width: auto;
   height: 300px;
   margin-bottom: 30px;
@@ -179,22 +164,10 @@ svg{
   border-radius: 10px;
 }
 .message{
- /*  direction: ltr; */
   width: 100%;
   font-size: 20px;
   color: rgb(202, 93, 78);
 }
-/* .showitemcontainer::-webkit-scrollbar {
-  border: 2px red solid;
-}
-
-.showitemcontainer::-webkit-scrollbar-track {
-  border: 2px red solid;
-}
-
-.showitemcontainer::-webkit-scrollbar-thumb {
-  border: 2px red solid;
-} */
 .allitemsnumber{
   width: 40px;
   height: 40px;
@@ -216,9 +189,6 @@ svg{
   text-align: center;
   align-items: center;
 }
-/* .focusmenuitem{
-  background-color: azure;
-} */
 .allitemscontent{
   scroll-behavior: smooth;
   padding: 10px;
@@ -292,7 +262,10 @@ svg{
 .menuitems:hover{
   background-color: azure;
 }
+
+
 @media only screen and (min-width: 600px){
+
   .menupanel{
     transition: 1s;
     /* width:0%; */
@@ -328,4 +301,5 @@ svg{
   .closemenu{
     display:inline-flex;
   }
+  
 }
