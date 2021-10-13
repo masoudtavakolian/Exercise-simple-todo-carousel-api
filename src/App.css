@@ -152,12 +152,7 @@ svg{
 .searchbox:hover .searchinput::placeholder{
   color:rgba(0, 0, 0, 0.61);
 }
-.searchinput:focus{
-  
-}
-.searchinput:focus{
-  
-}
+
 .searchinput:focus::placeholder{
   color:black;
 }
@@ -375,7 +370,7 @@ svg{
     /* transition: 100ms; */
     /* width:0%; */
     width:259px;
-    margin-left: -15%;
+    margin-left: -260px;
     height: calc(100vh - 40px);
     
     background-color: var(--cal-menupanel);

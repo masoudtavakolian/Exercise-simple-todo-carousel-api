@@ -13,6 +13,7 @@ let setcheck=(items)=>{
     setTimeout(() => {
         alltask[items].done=true;
         settask([...alltask]);
+        
     }, 500)    
     
 }
@@ -62,6 +63,8 @@ if(props.search!==undefined && props.search!==""){
         return null; 
         });
 }
+
+//show today task
 else if(props.showcategory===-1){
 myex=alltask.map((item,index)=>{
 if(item.category===-1 && item.done===props.status){
@@ -69,7 +72,7 @@ leng++
 return <div className="grouptask">
 <Checkbox   
 checked={(item.done)?item.done:null}
-onChange={()=>{setcheck(index)}}
+onChange={()=>{setcheck(index);}}
 /><div key={index} onClick={()=>{alert(item.title)}}><span className="numberlist">{leng+" - "}</span>{item.title}</div></div>
 }
 else

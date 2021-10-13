@@ -1,7 +1,7 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 import './AddTask.css'
-import Button from '@mui/material/Button';
+import {Button} from '@mui/material';
 import AddBoxIcon from '@mui/icons-material/AddBox';
 import AddTwoToneIcon from '@mui/icons-material/AddTwoTone';
 import AlertDialog from '../mui/AlertDialog'
@@ -39,6 +39,11 @@ export default function AddTask(props) {
             setcanadd({...canadd,canadd:false,value:"",des:"",successmessage:""})
             ssetshowpanel(v);
     }
+    useEffect(() => {
+        if(showpanel){
+            document.querySelector(".inputaddtodo").focus();
+        }
+    }, [showpanel])
     return (
     <>
     
@@ -51,7 +56,7 @@ export default function AddTask(props) {
         {(showpanel)?<div className="addtaskparent">
 
             <div className="main">
-            <input value={canadd.value} placeholder="write task here..." type="text" onKeyUp={(e)=>onkeyupsavedata(e)} onChange={e=>all(e)}></input>
+            <input className="inputaddtodo" value={canadd.value} placeholder="write task here..." type="text" onKeyUp={(e)=>onkeyupsavedata(e)} onChange={e=>all(e)}></input>
             <textarea placeholder="Description..." type="text" onChange={e=>txtarea(e)} value={canadd.des}></textarea>
             {/* <AlertDialog d  isabled={(!canadd)?"disabled":null}  title="ADDD" text="Add Task!" message="Are you sure?"></AlertDialog>
             */} 
