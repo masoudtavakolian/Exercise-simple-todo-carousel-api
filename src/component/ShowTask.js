@@ -59,7 +59,7 @@ if(props.search !== undefined && props.search !== ""){
         });
         if(countItems===0)
         messageBelowSearch=props.search+" Not Find!";
-}
+} 
 else if(props.showCategory===-1 || props.showCategory===-2){
 finalJsxList=finalStringTaskList.map((item,index)=>{
 if(item.category===-1 && item.done===props.status){
