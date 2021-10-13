@@ -72,7 +72,7 @@ export default function AddTask(props) {
     <>
       {!showPanel ? (
         <div
-          className="addnewtaskbar"
+          className="addNewTaskbar"
           onClick={() => changeShowPanelState(true)}
         >
           <span className="span1">
@@ -86,7 +86,7 @@ export default function AddTask(props) {
       ) 
       : 
       (
-        <div className="addtaskparent">
+        <div className="addTaskParent">
           <div className="main">
             <input
               className="inputaddtodo"
@@ -104,7 +104,7 @@ export default function AddTask(props) {
             ></textarea>
           </div>
           {canAddTask.successMessageKey.length !== 0 ? (
-            <div className="successmessage">
+            <div className="successMessage">
               {canAddTask.successMessageKey}
             </div>
           ) : null}

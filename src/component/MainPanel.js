@@ -13,7 +13,7 @@ export default function MainPanel(props) {
     }
   return (
     <>
-      <div className={"mainpanel" + (!props.menu ? " mainpanelcheck" : "")}>
+      <div className={"mainPanel" + (!props.menu ? " mainPanelcheck" : "")}>
         {(WichPanel==="today")?<Today addNewTaskFunc={addNewTaskFunc}></Today>:null}
         {(WichPanel==="completed")?<Completed></Completed>:null}
         {(WichPanel==="search")?<SearchPanel></SearchPanel>:null}

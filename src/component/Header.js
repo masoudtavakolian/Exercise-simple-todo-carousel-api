@@ -10,7 +10,7 @@ export default function Header(props) {
     const {setSearchItem}=useContext(contextSearchItem);
     
     let handleSearchIcon=()=>{
-      let searchInputElement = document.querySelector(".searchinput");
+      let searchInputElement = document.querySelector(".searchInput");
       if(searchInputElement.value==="")
         searchInputElement.placeholder="Enter Value To search!";
       else{
@@ -43,19 +43,18 @@ export default function Header(props) {
           <ListIcon></ListIcon>
         </div>
         :
-        //style={(!props.menu)?{display:"none"}:{display:"inline-flex"}}
-        <div className="into closemenu" style={{display:"inline-flex"}} onClick={()=>props.toggleMenuFunc(true)}>
+        <div className="into closeMenu" style={{display:"inline-flex"}} onClick={()=>props.toggleMenuFunc(true)}>
           <CloseIcon></CloseIcon>
         </div>
         }
         <div className="into home">
           <HomeIcon></HomeIcon>
         </div>
-        <div className="into searchbox">
-          <div onClick={()=>{handleSearchIcon()}} className="into searchicon">
+        <div className="into searchBox">
+          <div onClick={()=>{handleSearchIcon()}} className="into searchIcon">
             <ManageSearchIcon></ManageSearchIcon>
           </div>
-          <input onKeyUp={(e)=>handleSearch(e)} type="text" className="searchinput" placeholder="Search..." />
+          <input onKeyUp={(e)=>handleSearch(e)} type="text" className="searchInput" placeholder="Search..." />
         </div> 
       </div>
     </section>

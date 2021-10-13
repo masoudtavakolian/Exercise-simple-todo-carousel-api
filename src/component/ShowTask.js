@@ -45,30 +45,32 @@ if(props.search !== undefined && props.search !== ""){
         if(item.title.search(props.search)!==-1)
         {
          countItems++
-         return <div key={index+"firstdiv"} className="grouptask">
+         return <div key={index+"firstdiv"} className="groupTask">
          <Checkbox   
          key={index+"checkbox"}
          checked={(item.done)?item.done:null}
          onChange={()=>{setCheckBox(index)}}
-         /><div key={index} onClick={()=>{alert("Item:\n"+item.title)}}><span key={index+"span"} className="numberlist">{countItems+" - "}</span>
+         inputProps={{ 'aria-label': 'controlled' }}
+         /><div key={index} onClick={()=>{(item.description==="")?alert("No Description Defined!"):alert(item.description)}}><span key={index+"span"} className="numberList">{countItems+" - "}</span>
          {ReactHtmlParser(colorShowSearchResult(props.search,item.title))}</div></div>
         }
         else
          return null; 
         });
         if(countItems===0)
-        messageBelowSearch="Not Find!";
+        messageBelowSearch=props.search+" Not Find!";
 }
 else if(props.showCategory===-1 || props.showCategory===-2){
 finalJsxList=finalStringTaskList.map((item,index)=>{
 if(item.category===-1 && item.done===props.status){
     countItems++;
-    return(<div key={index+"firstdiv"} className="grouptask">
+    return(<div key={index+"firstdiv"} className="groupTask">
             <Checkbox  
             key={index+"checkbox"} 
             checked={(item.done)?item.done:null}
             onChange={()=>{setCheckBox(index);}}
-            /><div key={index} onClick={()=>{alert(item.title)}}><span key={index+"span"} className="numberlist">{countItems+" - "}</span>{item.title}</div></div>)
+            inputProps={{ 'aria-label': 'controlled' }}
+            /><div key={index} onClick={()=>{(item.description==="")?alert("No Description Defined!"):alert("Item Description:\n"+item.description)}}><span key={index+"span"} className="numberList">{countItems+" - "}</span>{item.title}</div></div>)
 }
 else
     return null; 
@@ -76,14 +78,14 @@ else
 if(countItems===0 && props.showCategory===-1)
     messageBelowSearchOther ="";
 else if(countItems===0 && props.showCategory===-2)
-    messageBelowSearchOther = "No Task Complited yet!";
+    messageBelowSearchOther = "No Task Completed yet!";
 }
 
     return (
         <>
-          {(countItems>0)?<div className="grouptaskcontainer">{finalJsxList}</div>:null}  
-          {(messageBelowSearch!=="")?<div className="grouptaskcontainer">{messageBelowSearch}</div>:null}
-          {(messageBelowSearchOther!=="")?<div className="grouptaskcontainer">{messageBelowSearchOther}</div>:null}
+          {(countItems>0)?<div className="groupTaskContainer">{finalJsxList}</div>:null}  
+          {(messageBelowSearch!=="")?<div className="groupTaskContainer">{messageBelowSearch}</div>:null}
+          {(messageBelowSearchOther!=="")?<div className="groupTaskContainer">{messageBelowSearchOther}</div>:null}
           
         </>
     )

@@ -49,7 +49,7 @@ svg{
     border-radius: 5px;
     margin-left:6px;
 }
-.searchbox{
+.searchBox{
     width: 35%;
     height: 30px;
     margin-left: 0px;
@@ -57,14 +57,14 @@ svg{
     align-items: center;
     background-color: var(--cal-back);
 }
-.searchinput,.searchicon{
+.searchInput,.searchIcon{
   background:rgba(252, 252, 252, 0.2);
   
 }
-.searchicon{
+.searchIcon{
   border-radius: 10px 0 0 10px;
 }
-.searchinput{
+.searchInput{
   border-radius: 0 10px 10px 0;
   width: 30%;
   height: 30px;
@@ -75,20 +75,20 @@ svg{
   font-size: 14px;
   transition:width 1s;
 }
-.searchinput:focus{
+.searchInput:focus{
   width: 100%;
   background-color: var(--cal-hover);
 }
-.searchinput:focus::placeholder{
+.searchInput:focus::placeholder{
   color:black;
 }
-.searchinput::placeholder{
+.searchInput::placeholder{
   color:var(--cal-hover);
 }
-.searchinput:hover::placeholder{
+.searchInput:hover::placeholder{
   color: black;
 }
-.searchinput:focus::placeholder{
+.searchInput:focus::placeholder{
   color: black;
 }
 .container {
@@ -97,11 +97,11 @@ svg{
   margin: 0 auto;
   display: flex;
 }
-.menu:hover,.home:hover,.closemenu:hover,.searchicon:hover{
+.menu:hover,.home:hover,.closeMenu:hover,.searchIcon:hover{
     background-color: rgba(252, 252, 252, 0.2);
   }
 
-.closemenu{
+.closeMenu{
   display: none;
 }
 .section-below{
@@ -109,7 +109,7 @@ svg{
   display: flex;
   flex-wrap: wrap;
 }
-.menupanel{
+.menuPanel{
   transition: 1s;
   width:100%;
   margin-left: -100%;
@@ -118,20 +118,20 @@ svg{
   padding-top: 10px;
   background-color:rgba(233, 173, 105, 0.226)
 }
-.mainpanel{
+.mainPanel{
   transition: 1s;
   background-color:var(--cal-mainback);
   width: 100%;
   padding: 10px;
 }
 
-.showmenu{
+.showMenu{
   transition:1s;
   margin-left: 0;
   width: 100%;
   height: auto;
 }
-.mainpanelcontainer{
+.mainPanelContainer{
   width: 100%;
 }
 .addnewpanel{
@@ -142,18 +142,18 @@ svg{
   margin-bottom: 30px;
   border: 2px red solid;
 }
-.newitembox{
+.newItembox{
   outline: none;
   width:200px;
   border-radius: 5px;
   font-size: 18px;
   color:blue;
 }
-.searchcontainer{
+.searchContainer{
   width: 100%; 
   padding: 10px;
 }
-.showitemcontainer{
+.showItemContainer{
   width: auto;
   height: 300px;
   margin-bottom: 30px;
@@ -168,7 +168,7 @@ svg{
   font-size: 20px;
   color: rgb(202, 93, 78);
 }
-.allitemsnumber{
+.allItemsNumber{
   width: 40px;
   height: 40px;
   padding: 3px;
@@ -182,14 +182,14 @@ svg{
   align-items: center;
   justify-content: center;
 }
-.parentitem{
+.parentItem{
   display: flex;
   flex-direction: row-reverse;
   direction: rtl;
   text-align: center;
   align-items: center;
 }
-.allitemscontent{
+.allItemsContent{
   scroll-behavior: smooth;
   padding: 10px;
   height: 40px;
@@ -205,10 +205,10 @@ svg{
   align-items: center;
   justify-content: center;
 }
-.doneitem,.deleteitem{
+.doneItem,.deleteItem{
   padding: 3px;
 }
-.showerror{
+.showError{
   margin-bottom: 5px;
 }
 .svg-icon{
@@ -225,7 +225,7 @@ svg{
   width: 35px;
   height:35px;
 }
-.cancelbutton{
+.cancelButton{
   cursor: pointer;
   margin-top: 3px;
   margin-left: 1px;
@@ -234,7 +234,7 @@ svg{
   width: 35px;
   height:35px;
 }
-.cancelbutton svg{
+.cancelButton svg{
   color:red;
 }
 .okbutton svg{
@@ -243,7 +243,7 @@ svg{
 .deletedtask{
   text-decoration: line-through rgba(255, 255, 255, 0.616);
 }
-.menuitems{
+.menuItems{
   color:black;
   cursor: pointer;
   margin-bottom: 10px;
@@ -259,47 +259,48 @@ svg{
 .menuitemdefaultback{
   background-color: var(--cal-backpanels)
 }
-.menuitems:hover{
+.menuItems:hover{
   background-color: azure;
 }
-
+.searchBox{
+  width: 50%;
+}
 
 @media only screen and (min-width: 600px){
 
-  .menupanel{
+  .menuPanel{
     transition: 1s;
-    /* width:0%; */
     width:20%;
     margin-left: -20%;
     height: auto;
     background-color:rgba(233, 173, 105, 0.226)
   }
-  .showmenu{
+  .showMenu{
     transition: 1s;
     margin-left:0;
     width:20%;
     height: auto;
   }
-  .firststatepanel{
+  .firstStatePanel{
     transition: 1s;
     margin-left:0;
     width:20%;
     height: auto;
   }
-  .mainpanel{
+  .mainPanel{
     transition: 1s;
     width: 80%;
     background-color:var(--cal-mainback);
   }
-  .mainpanelcheck{
+  .mainPanelCheck{
     transition: 1s;
     width: 100%; 
   }
   .menu{
     display: none;
   }
-  .closemenu{
+  .closeMenu{
     display:inline-flex;
   }
-  
+
 }

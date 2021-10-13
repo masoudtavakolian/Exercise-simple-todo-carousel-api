@@ -1,11 +1,12 @@
-.grouptask{
+.groupTask{
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
-.grouptask svg{
+.groupTask svg{
     color:var(--cal-back);
 }
-.grouptaskcontainer{
+.groupTaskContainer{
     margin-top: 5px;
     height: 200px;
     margin-bottom: 5px;
@@ -17,6 +18,6 @@
     padding: 5px;
     border-radius: 4px;
 }
-.numberlist{
+.numberList{
     color:var(--cal-back);
 }

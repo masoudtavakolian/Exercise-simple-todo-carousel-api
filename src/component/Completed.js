@@ -3,7 +3,7 @@ import "./Today.css";
 import ShowTask from "./ShowTask";
 export default function Completed(props) {
     return (
-    <div className="todaycontainer">
+    <div className="todayContainer">
       <span>Completed Task</span>
       <span className="showtodaytask">
           <ShowTask showCategory={-2} status={true}></ShowTask>

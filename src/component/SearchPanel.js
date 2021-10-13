@@ -5,7 +5,7 @@ import {contextSearchItem} from "../App"
 export default function SearchPanel(props) {
   const {searchItem}=useContext(contextSearchItem);
   return (
-    <div className="todaycontainer">
+    <div className="todayContainer">
       <span>Search: {searchItem}</span>
       <span className="showtodaytask">
           <ShowTask search={searchItem} showCategory={100} status={true}></ShowTask>

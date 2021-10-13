@@ -48,28 +48,19 @@ h2,
 h3,
 p ,*{
   margin: 0;
-  /* transition: 0.9s; */
-  /* direction: rtl;
-  justify-content: right;
-  flex-direction:initial; */
 }
 :root{
-    /* --cal-back:rgb(235, 53, 53); */
-    /* --cal-back:#1976d2; */
     --cal-back:#db4c3f;
     --cal-icons:whitesmoke;
     --cal-hover:aliceblue;
     --cal-menuback:rgba(124, 238, 213, 0.534);
-    /* --cal-mainback:rgba(161, 161, 161, 0.151); */
     --cal-mainback:#fff;
     --cal-backpanels:rgba(255, 72, 0, 0.582);
-    /* --cal-menupanel:rgba(248, 248, 248, 0.22); */
-    --cal-menupanel:#fafafa;
+    --cal-menuPanel:#fafafa;
 }
 body {
   margin: 0 auto;
   font-family: BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-  /* font-family: sans-serif; */
   font-size: 13px;
   background-color: var(--cal-mainback);
 }
@@ -92,33 +83,29 @@ svg{
     color:whitesmoke;
     width: 30px;
     height: 30px;
-    /* height:25px; */
     display: flex;
     align-items: center;
     border-radius: 5px;
     margin-left:6px;
 }
-.searchbox{
-    width: 450px;
+.searchBox{
+   
     height: 30px;
     margin-left: 0px;
     display: flex;
     align-items: center;
     background-color: var(--cal-back);
 }
-.searchinput,.searchicon{
+.searchInput,.searchIcon{
   background:rgba(252, 252, 252, 0.2);
   
 }
-.searchicon{
-  /* border-radius: 10px 0 0 10px; */
+.searchIcon{
   border-radius: 0;
   border: 1px solid transparent;
   transition: width 70ms, background-color 300ms;
 }
-.searchinput{
-  /* border-radius: 5px; */
-  /* border-radius: 0 10px 10px 0; */
+.searchInput{
   border: 1px solid transparent;
   width: 35%;
   height: 30px;
@@ -127,57 +114,52 @@ svg{
   outline: 0;
   height: 100%;
   font-size: 14px;
- /*  margin-left: 1px; */
   transition: width 70ms, background-color 300ms;
 }
-.searchbox:focus-within .searchinput{
+.searchBox:focus-within .searchInput{
   width: 100%;
   background-color: var(--cal-hover);
 }
-.searchbox:focus-within .searchicon{
+.searchBox:focus-within .searchIcon{
   background-color: var(--cal-hover);
 }
-.searchbox:focus-within .searchicon svg{
+.searchBox:focus-within .searchIcon svg{
   color:black;
 }
-.searchbox:hover .searchicon svg{
+.searchBox:hover .searchIcon svg{
   color:black;
 }
-.searchbox:hover .searchicon{
+.searchBox:hover .searchIcon{
   background-color: var(--cal-hover);
 }
-.searchbox:hover .searchinput{
+.searchBox:hover .searchInput{
   background-color: var(--cal-hover);
 }
-.searchbox:hover .searchinput::placeholder{
+.searchBox:hover .searchInput::placeholder{
   color:rgba(0, 0, 0, 0.61);
 }
 
-.searchinput:focus::placeholder{
+.searchInput:focus::placeholder{
   color:black;
 }
-.searchinput::placeholder{
+.searchInput::placeholder{
   color:var(--cal-hover);
 }
-.searchinput:hover::placeholder{
-  /* color: rgb(148, 251, 255); */
-}
-.searchinput:focus::placeholder{
+
+.searchInput:focus::placeholder{
   color: black;
 }
 .container {
-  /* padding: 1px; */
   padding-left: 30px;
   width: 100%;
   margin: 0 auto;
   display: flex;
-  /* flex-wrap: wrap; */
 }
-.menu:hover,.home:hover,.closemenu:hover,.searchicon:hover{
+.menu:hover,.home:hover,.closeMenu:hover,.searchIcon:hover{
     background-color: rgba(252, 252, 252, 0.2);
   }
 
-.closemenu{
+.closeMenu{
   display: none;
 }
 .section-below{
@@ -185,34 +167,27 @@ svg{
   display: flex;
   flex-wrap: wrap;
 }
-.menupanel{
+.menuPanel{
   transition: 300ms ;
   width:100%;
   margin-left: -100%;
   opacity: 1;
   height: auto;
   padding-top: 10px;
-  background-color: var(--cal-menupanel);
+  background-color: var(--cal-menuPanel);
 }
-.mainpanel{
+.mainPanel{
   transition: 300ms;
   background-color:var(--cal-mainback);
   width: 100%;
   padding: 10px;
 }
 
-.showmenu{
-  /* transition:1s; */
+.showMenu{
   margin-left: 0;
   width: 100%;
-  /* height: auto; */
-  /* display: inline-flex; */
 }
-/* .mainpanelcheck{
-  transition: 1s;
-  width: 100%;
-} */
-.mainpanelcontainer{
+.mainPanelContainer{
   width: 100%;
 }
 .addnewpanel{
@@ -220,23 +195,21 @@ svg{
   width:100%;
   background-color:var(--cal-backpanels);
   border-radius: 10px;
-  /* margin-top: 5px; */
   margin-bottom: 30px;
   border: 2px red solid;
 }
-.newitembox{
+.newItembox{
   outline: none;
   width:200px;
   border-radius: 5px;
   font-size: 18px;
   color:blue;
 }
-.searchcontainer{
+.searchContainer{
   width: 100%; 
   padding: 10px;
 }
-.showitemcontainer{
-  /* direction: rtl; */
+.showItemContainer{
   width: auto;
   height: 300px;
   margin-bottom: 30px;
@@ -247,23 +220,11 @@ svg{
   border-radius: 10px;
 }
 .message{
- /*  direction: ltr; */
   width: 100%;
   font-size: 20px;
   color: rgb(202, 93, 78);
 }
-/* .showitemcontainer::-webkit-scrollbar {
-  border: 2px red solid;
-}
-
-.showitemcontainer::-webkit-scrollbar-track {
-  border: 2px red solid;
-}
-
-.showitemcontainer::-webkit-scrollbar-thumb {
-  border: 2px red solid;
-} */
-.allitemsnumber{
+.allItemsNumber{
   width: 40px;
   height: 40px;
   padding: 3px;
@@ -277,17 +238,14 @@ svg{
   align-items: center;
   justify-content: center;
 }
-.parentitem{
+.parentItem{
   display: flex;
   flex-direction: row-reverse;
   direction: rtl;
   text-align: center;
   align-items: center;
 }
-/* .focusmenuitem{
-  background-color: azure;
-} */
-.allitemscontent{
+.allItemsContent{
   scroll-behavior: smooth;
   padding: 10px;
   height: 40px;
@@ -303,10 +261,10 @@ svg{
   align-items: center;
   justify-content: center;
 }
-.doneitem,.deleteitem{
+.doneItem,.deleteItem{
   padding: 3px;
 }
-.showerror{
+.showError{
   margin-bottom: 5px;
 }
 .svg-icon{
@@ -323,7 +281,7 @@ svg{
   width: 35px;
   height:35px;
 }
-.cancelbutton{
+.cancelButton{
   cursor: pointer;
   margin-top: 3px;
   margin-left: 1px;
@@ -332,7 +290,7 @@ svg{
   width: 35px;
   height:35px;
 }
-.cancelbutton svg{
+.cancelButton svg{
   color:red;
 }
 .okbutton svg{
@@ -341,7 +299,7 @@ svg{
 .deletedtask{
   text-decoration: line-through rgba(255, 255, 255, 0.616);
 }
-.menuitems{
+.menuItems{
   color:black;
   cursor: pointer;
   margin-bottom: 10px;
@@ -357,47 +315,50 @@ svg{
 .menuitemdefaultback{
   background-color: var(--cal-backpanels);
 }
-.menuitems:hover{
+.menuItems:hover{
   background-color: azure;
 }
-.firststatepanel{
+.firstStatePanel{
   transition: 300ms;
   margin-left:0;
   width:100%;
 }
+.searchBox{
+  width: 60%; 
+}
 @media only screen and (min-width: 600px){
-  .menupanel{
-    /* transition: 100ms; */
-    /* width:0%; */
+  .searchBox{
+   width: 60%;   
+   width: 450px;
+  }
+  
+  .menuPanel{
     width:259px;
     margin-left: -260px;
     height: calc(100vh - 40px);
     
-    background-color: var(--cal-menupanel);
-    /* background-color:rgba(233, 173, 105, 0.226) */
+    background-color: var(--cal-menuPanel);
   }
-  .showmenu{
-    /* transition: 1s; */
+  .showMenu{
     margin-left:0;
-    width:259px;
-    
+    width:259px;   
   }
-  .firststatepanel{
+  .firstStatePanel{
     width:259px;
   }
-  .mainpanel{
+  .mainPanel{
     transition: 300ms;
     width: calc(100% - 260px);
     background-color:var(--cal-mainback);
   }
-  .mainpanelcheck{
+  .mainPanelCheck{
     transition: 300ms;
     width: 100%; 
   }
   .menu{
     display: none;
   }
-  .closemenu{
+  .closeMenu{
     display:inline-flex;
   }
 }

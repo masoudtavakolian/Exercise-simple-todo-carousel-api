@@ -1,4 +1,4 @@
-.menupanel .into{
+.menuPanel .into{
   width: 100%;
   margin: 0 auto;
   height: auto;
@@ -9,24 +9,29 @@
   font-size: 14px;
  color: #0f018a;
 }
-.menupanel .into >span{
+.menuPanel .into >span{
   margin-left: 35px;
   width: calc(100% - 35px);
   padding: 8px;
   display: flex;
   justify-content: flex-start;
 }
-.menupanel .into .sp2{
+.menuPanel .into .sp2{
   color:#109bad;
 }
-.menupanel .into .sp3{
+.menuPanel .into .sp3{
   color:#4f9b11;
 }
-.menupanel .into span:hover svg{
+.menuPanel .into span:hover svg{
   color: #d21947;
 }
-.menupanel .into span:hover{
+.menuPanel .into span:hover{
   border-radius: 4px;
   color: #d21947;
   background-color:#eee;
+} 
+.Icons{
+  margin-right:10px !important;
+  width:20px !important;
+  height:20px !important;
 }
