@@ -59,8 +59,14 @@ if(props.search !== undefined && props.search !== ""){
         });
         if(countItems===0)
         messageBelowSearch=props.search+" Not Find!";
-} 
+}
+
+else if(props.search !== undefined && props.search === ""){
+    messageBelowSearch="No previous search yet!";
+}
+
 else if(props.showCategory===-1 || props.showCategory===-2){
+
 finalJsxList=finalStringTaskList.map((item,index)=>{
 if(item.category===-1 && item.done===props.status){
     countItems++;
@@ -79,6 +85,7 @@ if(countItems===0 && props.showCategory===-1)
     messageBelowSearchOther ="";
 else if(countItems===0 && props.showCategory===-2)
     messageBelowSearchOther = "No Task Completed yet!";
+
 }
 
     return (
@@ -86,7 +93,6 @@ else if(countItems===0 && props.showCategory===-2)
           {(countItems>0)?<div className="groupTaskContainer">{finalJsxList}</div>:null}  
           {(messageBelowSearch!=="")?<div className="groupTaskContainer">{messageBelowSearch}</div>:null}
           {(messageBelowSearchOther!=="")?<div className="groupTaskContainer">{messageBelowSearchOther}</div>:null}
-          
         </>
     )
 }

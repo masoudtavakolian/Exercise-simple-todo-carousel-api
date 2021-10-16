@@ -16,11 +16,17 @@
   display: flex;
   justify-content: flex-start;
 }
-.menuPanel .into .sp2{
+.menuPanel .into .moveinboxicon{
   color:#109bad;
 }
-.menuPanel .into .sp3{
+.menuPanel .into .assignicon{
   color:#4f9b11;
+}
+.menuPanel .into .swipericon{
+  color:brown;
+}
+.menuPanel .into .lastsearchicon{
+  color:burlywood;
 }
 .menuPanel .into span:hover svg{
   color: #d21947;

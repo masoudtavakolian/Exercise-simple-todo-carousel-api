@@ -16,6 +16,7 @@
     "react-html-parser": "^2.0.2",
     "react-meta-tags": "^1.0.1",
     "react-scripts": "4.0.3",
+    "swiper": "^6.0.2",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
