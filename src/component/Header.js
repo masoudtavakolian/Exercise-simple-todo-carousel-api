@@ -38,12 +38,12 @@ export default function Header(props) {
     return (
       <section className="head">
       <div className="container">
-        {(props.menu)?
-        <div className="into menu" style={{display:"inline-flex"}} onClick={()=>{props.toggleMenuFunc(false)}}>
+        {(!props.menu)?
+        <div className="into menu" style={{display:"inline-flex"}} onClick={()=>{props.toggleMenuFunc(true)}}>
           <ListIcon></ListIcon>
         </div>
         :
-        <div className="into closeMenu" style={{display:"inline-flex"}} onClick={()=>props.toggleMenuFunc(true)}>
+        <div className="into closeMenu" style={{display:"inline-flex"}} onClick={()=>props.toggleMenuFunc(false)}>
           <CloseIcon></CloseIcon>
         </div>
         }

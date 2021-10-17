@@ -4,6 +4,7 @@ import SearchPanel from "./SearchPanel";
 import Today from "./Today";
 import Completed from "./Completed";
 import MySwiper from "./MySwiper";
+import Inbox from "./Inbox";
 export default function MainPanel(props) {
     const tasks = useContext(myContext);
     const {v1:WichPanel}=useContext(wichPanelContext);
@@ -19,6 +20,7 @@ export default function MainPanel(props) {
         {(WichPanel==="search")?<SearchPanel></SearchPanel>:null}
         {(WichPanel==="lastSearch")?<SearchPanel></SearchPanel>:null}
         {(WichPanel==="swiper")?<MySwiper></MySwiper>:null}
+        {(WichPanel==="inbox")?<Inbox></Inbox>:null}
       </div>
     </>
   );

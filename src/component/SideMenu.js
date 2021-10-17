@@ -17,7 +17,7 @@ export default function SideMenu(props) {
     return (
       <div className={"menuPanel "+((!removeFirstState)?"firstStatePanel":"")+((props.menu)?" showMenu":"")}>
         <div className="into" >
-          <span className="moveinboxicon"  >
+          <span style={(WichPanel==="inbox")?{backgroundColor:"#eee"}:{backgroundColor:""}} onClick={()=>setWichPanel("inbox")} className="moveinboxicon"  >
           <span><MoveToInboxIcon className="Icons" sx={{color:"#109bad"}}></MoveToInboxIcon></span>
             <span>inbox</span>
           </span>

@@ -1,7 +1,7 @@
-import React, { useRef, useState } from "react";
+import React, {  useRef,useState,useEffect } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import axios from "axios";
 // Import Swiper styles
 /* import "swiper/css";
 import "swiper/css/pagination"
@@ -16,19 +16,33 @@ import SwiperCore, { Autoplay, Pagination, Navigation } from "swiper";
 // install Swiper modules
 SwiperCore.use([Autoplay, Pagination, Navigation]);
 
-let a=[];
-  for(let i=0;i<10;i++){a.push( 
-  <SwiperSlide>
-    <div className="swiper-card">
-      <div className="head-image">
-        <img src="https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg" />
-      </div>
-      <div className="details"></div>
-    </div> 
-  </SwiperSlide>)}
-  
-
 export default function MySwiper() {
+  const [data,setdata]=useState([]);
+  let allJsxCardElement=[];
+  if(data.length!==0){
+       data.forEach(element => {
+        allJsxCardElement.push( 
+          <SwiperSlide>
+            <div  className="swiper-card">
+              <div className="head-image">
+                <img alt="Product image" src={element.image+""} />
+              </div>
+              <div className="details">
+                <div className="product-title">{element.title+""}</div>
+                <div className="category">Category: {element.category+""}</div>
+                <div className="price"><span>{element.price+" Tomans"}</span><span>{(element.price*(0.600)).toFixed(2)+" Tomans"}</span></div>
+              </div>
+            </div> 
+          </SwiperSlide>)
+     });
+  }
+  else{
+    allJsxCardElement=[]
+  }
+  useEffect(() => {
+    axios.get("https://fakestoreapi.com/products")
+        .then(response =>{console.log(response.data[0]);setdata(response.data)});
+  }, [])
   return (
     <>
       <Swiper
@@ -36,26 +50,22 @@ export default function MySwiper() {
         centeredSlides={false}
         slidesPerView={5}
         breakpoints= {{
-          // when window width is >= 320px
           0: {
            slidesPerView: 1,
            spaceBetween: 20
           },
-          // when window width is >= 480px
-          480: {
+          800: {
            slidesPerView: 2,
            spaceBetween: 30
           },
-          // when window width is >= 640px
-          601: {
+          1010: {
            slidesPerView: 3,
            spaceBetween: 40
           },
-          1100:{
+          1300:{
             slidesPerView: 4,
            spaceBetween: 40
           },
-          
          }}
         autoplay={{
           delay: 100000,
@@ -67,53 +77,12 @@ export default function MySwiper() {
         navigation={true}
         className="mySwiper"
       >
-        <SwiperSlide>
-          <div className="swiper-card">
-            <div className="head-image">
-              <img src="https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg" />
-            </div>
-            <div className="details"></div>
-          </div> 
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="swiper-card">
-            <div className="head-image">
-              <img src="https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg" />
-            </div>
-            <div className="details"></div>
-          </div> 
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="swiper-card">
-            <div className="head-image">
-              <img src="https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg" />
-            </div>
-            <div className="details"></div>
-          </div> 
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="swiper-card">
-            <div className="head-image">
-              <img src="https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_.jpg" />
-            </div>
-            <div className="details"></div>
-          </div> 
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="swiper-card">
-            <div className="head-image">
-              <img src="https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg" />
-            </div>
-            <div className="details"></div>
-          </div> 
-        </SwiperSlide>
         {
-          
-a
+          data.length===0?<SwiperSlide><div>Loading...</div></SwiperSlide>:""
         }
-
-        {/* https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg<SwiperSlide><div className="ffff">Hi</div></SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide> */}
+        {
+          allJsxCardElement
+        }
       </Swiper>
     </>
   );

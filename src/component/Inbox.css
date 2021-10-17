@@ -1,0 +1,6 @@
+:root{
+  --cal-back:#db4c3f;
+}
+.hhh{
+   color:var(--cal-back);  
+}

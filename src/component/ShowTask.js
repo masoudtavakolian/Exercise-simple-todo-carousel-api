@@ -40,7 +40,23 @@ let countItems=0;
 let messageBelowSearch="";
 let messageBelowSearchOther="";
 
-if(props.search !== undefined && props.search !== ""){
+if(props.user!=undefined){
+    finalJsxList=finalStringTaskList.map((item,index)=>{
+        if(item.userId===props.user){
+            countItems++;
+            return(<div key={index+"firstdiv"} className="groupTask">
+                    <Checkbox  
+                    key={index+"checkbox"} 
+                    checked={(item.done)?item.done:null}
+                    onChange={()=>{setCheckBox(index);}}
+                    inputProps={{ 'aria-label': 'controlled' }}
+                    /><div key={index} onClick={()=>{(item.description==="")?alert("No Description Defined!"):alert("Item Description:\n"+item.description)}}><span key={index+"span"} className="numberList">{countItems+" - "}</span>{item.title}</div></div>)
+        }
+        else
+            return null; 
+        });
+}
+else if(props.search !== undefined && props.search !== ""){
     finalJsxList=finalStringTaskList.map((item,index)=>{
         if(item.title.search(props.search)!==-1)
         {
@@ -65,7 +81,7 @@ else if(props.search !== undefined && props.search === ""){
     messageBelowSearch="No previous search yet!";
 }
 
-else if(props.showCategory===-1 || props.showCategory===-2){
+else if(props.showCategory===-1 || props.showCategory===-2 ){
 
 finalJsxList=finalStringTaskList.map((item,index)=>{
 if(item.category===-1 && item.done===props.status){

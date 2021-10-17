@@ -39,6 +39,7 @@ export default function AddTask(props) {
   };
   let saveTaskFunc = () => {
     props.addNewTaskFunc({
+      userId:"default",
       category: -1,
       done: false,
       title: canAddTask.value,
