@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import PostDeleteRequest from './PostDeleteRequest.js/PostDeleteRequest';
+import ReCaptcha from './ReCaptcha/ReCaptcha'
 ReactDOM.render(
   <App></App>,
   document.getElementById('root')

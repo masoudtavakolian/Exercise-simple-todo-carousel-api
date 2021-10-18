@@ -1,19 +1,11 @@
 import React, {  useRef,useState,useEffect } from "react";
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import axios from "axios";
-// Import Swiper styles
-/* import "swiper/css";
-import "swiper/css/pagination"
-import "swiper/css/navigation" */
 import "swiper/swiper-bundle.min.css";
-// import 'swiper/swiper.min.css'
 import "./MySwiper.css";
 import "../App.css"
-// import Swiper core and required modules
 import SwiperCore, { Autoplay, Pagination, Navigation } from "swiper";
 
-// install Swiper modules
 SwiperCore.use([Autoplay, Pagination, Navigation]);
 
 export default function MySwiper() {
@@ -41,7 +33,7 @@ export default function MySwiper() {
   }
   useEffect(() => {
     axios.get("https://fakestoreapi.com/products")
-        .then(response =>{console.log(response.data[0]);setdata(response.data)});
+        .then(response =>{setdata(response.data)});
   }, [])
   return (
     <>
