@@ -5,7 +5,7 @@ import ShowTask from "./ShowTask";
 export default function Today(props) {
   return (
     <div className="todayContainer">
-      <span>Today</span>
+      <span>Today{/* <img alt="imgg" src={"./"} /> */}</span>
       <div className="showtodaytask">
         <ShowTask showCategory={-1} status={false}></ShowTask>
       </div>

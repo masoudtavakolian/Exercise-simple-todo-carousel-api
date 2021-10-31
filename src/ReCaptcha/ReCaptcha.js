@@ -5,7 +5,7 @@ function onFormSubmit(e) {
     window.grecaptcha.ready(function() {
       window.grecaptcha.execute('6LcprtkcAAAAAGAxB-PwcCf61y76xb-N_G218n1O', {action: 'submit'}).then(function(token) {
         // Send form value as well as token to the server
-        alert("Form Sent!")
+        alert("Form Sent!");
       });
     });
   }
